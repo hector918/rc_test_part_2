@@ -10,7 +10,7 @@ const SignInForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post("http://localhost:3001/login", {
+      const response = await axios.post(`${window.location.origin}/login`, {
         username,
         password,
       });
