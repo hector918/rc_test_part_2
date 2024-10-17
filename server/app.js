@@ -14,7 +14,13 @@ const jwt_exprie_time = "1h";
 const PORT = process.env.PORT;
 const app = express();
 //config///////
-app.use(cors());
+// CORS configuration
+const corsOptions = {
+	origin: ['https://localhost:3000', 'https://hygpo.com'],
+	optionsSuccessStatus: 200
+};
+
+app.use(cors(corsOptions));
 app.use(logger("dev"));
 app.use(express.json());
 //temp users
