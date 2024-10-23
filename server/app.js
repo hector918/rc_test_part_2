@@ -95,13 +95,13 @@ function verifyToken(req, res, next){
       console.error("token public key file not founud.");
       return res.status(500).json({ message: "Internal error." });
     }
-    
+
     console.log(err.name);
     switch (err.name) {
       case "TokenExpiredError":
         return res.status(401).json({ message: "Token has expired." });
       default:
-        return res.status(403).json({ message: "Forbidden" });
+        return res.status(403).json({ message: "Forbidden." });
     }
   }
 }
